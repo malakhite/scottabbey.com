@@ -15,6 +15,13 @@
 	"observability": {
 		"enabled": true,
 	},
+	"routes": [
+		{
+			"pattern": "/*",
+			"custom_domain": true,
+			"zone_name": "scottabbey.com",
+		},
+	],
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
