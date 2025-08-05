@@ -1,0 +1,22 @@
+body {
+	font-family: var(--font-geist-sans);
+	min-height: 100dvh;
+	max-width: 100vw;
+	overflow-x: hidden;
+	position: relative;
+}
+
+.content {
+	max-width: 80ch;
+	margin: auto;
+	padding: var(--spacing-4);
+}
+
+a {
+	color: var(--mint-11);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

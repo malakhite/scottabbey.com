@@ -1,0 +1,37 @@
+.base {
+	display: inline-flex;
+	justify-content: center;
+	gap: var(--spacing-2);
+	white-space: nowrap;
+	border-radius: var(--radius-md);
+	font-size: 0.875rem;
+	cursor: pointer;
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+.default {
+	background-color: var(--accent-surface);
+	border: 1px solid var(--accent-border);
+	color: var(--accent-text);
+
+	&:hover {
+		background-color: var(--accent-surface-hover);
+		border-color: var(--accent-border-strong);
+		color: var(--accent-text-high-constrast);
+	}
+}
+
+.outline {
+	background-color: inherit;
+	border: 1px solid var(--border);
+	color: inherit;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+		border-color: var(--border-strong);
+	}
+}

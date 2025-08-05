@@ -1,0 +1,9 @@
+.next
+.open-next
+.build
+public
+.wrangler
+pnpm-lock.yaml
+
+*.md
+*.mdx

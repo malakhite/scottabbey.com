@@ -1,11 +1,21 @@
-import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+	extension: /\.(md|mdx)$/,
+	options: {
+		remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+	},
+});
 
-// added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+export default withMDX(nextConfig);
+
 initOpenNextCloudflareForDev();

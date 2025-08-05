@@ -1,0 +1,22 @@
+.wrapper {
+	display: flex;
+	position: sticky;
+	top: 0;
+	left: 0;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--spacing-2);
+	padding-inline: var(--spacing-4);
+	background-color: var(--accent-surface);
+	color: var(--accent-text);
+}
+
+.name {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.navList {
+	display: flex;
+	gap: var(--spacing-4);
+}
