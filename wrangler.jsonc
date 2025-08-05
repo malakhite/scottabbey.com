@@ -17,9 +17,8 @@
 	},
 	"routes": [
 		{
-			"pattern": "/*",
+			"pattern": "scottabbey.com",
 			"custom_domain": true,
-			"zone_name": "scottabbey.com",
 		},
 	],
 	"r2_buckets": [{
