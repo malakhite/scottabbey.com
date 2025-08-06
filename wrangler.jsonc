@@ -21,10 +21,12 @@
 			"custom_domain": true,
 		},
 	],
-	"r2_buckets": [{
-		"binding": "NEXT_INC_CACHE_R2_BUCKET",
-		"bucket_name": "sadc-next-cache"
-	}],
+	"r2_buckets": [
+		{
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "sadc-next-cache",
+		},
+	],
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

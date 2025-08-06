@@ -1,15 +1,20 @@
 import { PostList } from '@/components/posts/post-list';
+import { getAllPosts } from './utils';
 
-interface PageProps {
-	searchParams: Promise<{ page?: string }>;
-}
+import type { PostImport } from './types';
 
-export default async function Page({ searchParams }: PageProps) {
+export default async function Page() {
+	const postPaths = getAllPosts();
+	const posts = await Promise.all(
+		postPaths.map(async (params) => {
+			const { default: Post, ...post } = (await import(`@/content/posts/${params.year}/${params.month}/${params.slug}.mdx`)) as PostImport;
+			return { params, post };
+		}),
+	);
 	return (
 		<main className="content">
 			<h1>Posts</h1>
-
-			<PostList searchParams={searchParams} />
+			<PostList posts={posts} />
 		</main>
 	);
 }

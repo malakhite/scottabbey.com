@@ -12,7 +12,8 @@ export interface PostImport {
 }
 
 export interface Frontmatter {
-	title?: string;
-	summary?: string;
+	type: 'post' | 'update';
+	title: string;
 	published: string;
+	summary?: string;
 }

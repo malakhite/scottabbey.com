@@ -1,29 +1,38 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+'use client';
 
-import { getAllPosts } from '@/app/posts/utils';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+
 import { Button } from '@/components/button';
 import { LineItem } from './line-item';
 
 import styles from './post-list.module.scss';
 
-import type { PostImport } from '@/app/posts/types';
-
-interface PostListProps {
-	searchParams: Promise<{ page?: string }>;
-}
+import type { PostImport, PostParams } from '@/app/posts/types';
 
 const PAGE_SIZE = 10;
 
-export async function PostList({ searchParams }: PostListProps) {
-	const page = Number((await searchParams).page ?? '1');
-	const postPaths = getAllPosts();
-	const posts = await Promise.all(
-		postPaths.map(async (params) => {
-			const post = (await import(`@/content/posts/${params.year}/${params.month}/${params.slug}.mdx`)) as PostImport;
-			return { params, post };
-		}),
-	);
+type Posts = Array<{
+	params: PostParams;
+	post: Omit<PostImport, 'default'>;
+}>;
+
+interface PostListProps {
+	posts: Posts;
+}
+
+export function PostList({ posts }: PostListProps) {
+	const [page, setPage] = useState(1);
+
+	const handlePageChange: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+		event.preventDefault();
+		const action = event.currentTarget.name;
+		if (action === 'increment') {
+			setPage((prev) => prev + 1);
+		} else if (action === 'decrement') {
+			setPage((prev) => prev - 1);
+		}
+	};
 
 	return (
 		<>
@@ -34,29 +43,13 @@ export async function PostList({ searchParams }: PostListProps) {
 			</ul>
 
 			<div className={styles.pagination}>
-				{page > 1 ? (
-					<Button asChild={true}>
-						<Link href={`/posts?page=${page - 1}`} className="button">
-							<ChevronLeft />
-						</Link>
-					</Button>
-				) : (
-					<Button disabled={true}>
-						<ChevronLeft />
-					</Button>
-				)}
+				<Button name="decrement" onClick={handlePageChange} disabled={page === 1}>
+					<ChevronLeft />
+				</Button>
 
-				{posts.length > page * PAGE_SIZE ? (
-					<Button asChild={true}>
-						<Link href={`/posts?page=${page + 1}`}>
-							<ChevronRight />
-						</Link>
-					</Button>
-				) : (
-					<Button disabled={true}>
-						<ChevronRight />
-					</Button>
-				)}
+				<Button name="increment" onClick={handlePageChange} disabled={page * PAGE_SIZE >= posts.length}>
+					<ChevronRight />
+				</Button>
 			</div>
 		</>
 	);
