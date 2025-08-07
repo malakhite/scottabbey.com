@@ -2,20 +2,20 @@ import Link from 'next/link';
 
 import styles from './post-list.module.scss';
 
-import type { PostImport, PostParams } from '@/app/posts/types';
+import type { Frontmatter, PostPathParams } from '@/app/posts/types';
 
 interface LineItemProps {
-	params: PostParams;
-	post: Omit<PostImport, 'default'>;
+	params: PostPathParams;
+	frontmatter: Frontmatter;
 }
 
-export function LineItem({ params, post }: LineItemProps) {
+export function LineItem({ params, frontmatter }: LineItemProps) {
 	return (
 		<li className={styles.line}>
 			<div className={styles.line__title}>
-				<Link href={`/posts/${params.year}/${params.month}/${params.slug}`}>{post.frontmatter.title}</Link>
+				<Link href={`/posts/${params.year}/${params.month}/${params.slug}`}>{frontmatter.title}</Link>
 			</div>
-			<div className={styles.line__date}>{post.frontmatter?.published ?? ''}</div>
+			<div className={styles.line__date}>{frontmatter?.published ?? ''}</div>
 		</li>
 	);
 }

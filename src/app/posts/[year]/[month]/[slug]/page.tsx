@@ -1,9 +1,9 @@
-import { getAllPosts } from '@/app/posts/utils';
+import { getPostPathParams } from '@/app/posts/utils';
 
-import type { PostImport, PostParams } from '@/app/posts/types';
+import type { PostImport, PostPathParams } from '@/app/posts/types';
 
 interface PageProps {
-	params: Promise<PostParams>;
+	params: Promise<PostPathParams>;
 }
 
 export default async function Page({ params }: PageProps) {
@@ -21,7 +21,7 @@ export default async function Page({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-	const posts = getAllPosts();
+	const posts = getPostPathParams();
 	return posts;
 }
 

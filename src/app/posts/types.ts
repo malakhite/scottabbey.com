@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface PostParams {
+export interface PostPathParams {
 	year: string;
 	month: string;
 	slug: string;

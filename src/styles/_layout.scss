@@ -1,0 +1,15 @@
+.content {
+	max-width: 80ch;
+	margin: auto;
+	padding: var(--spacing-4);
+
+	& p {
+		margin-block-end: var(--spacing-md);
+	}
+}
+
+.card {
+	padding: var(--spacing-md);
+	background-color: var(--surface);
+	border-radius: var(--radius-md);
+}
