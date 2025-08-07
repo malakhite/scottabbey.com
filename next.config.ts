@@ -6,6 +6,9 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+	images: {
+		dangerouslyAllowSVG: true,
+	},
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 };
 

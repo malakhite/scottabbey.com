@@ -2,7 +2,7 @@ import '@/styles/index.scss';
 
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { Nav } from '@/components/nav';
+import { Header } from '@/components/header';
 import { SITE_DESCRIPTION, SITE_NAME } from '@/constants';
 import type { Metadata } from 'next';
 
@@ -29,7 +29,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<Nav />
+				<Header />
 				{children}
 			</body>
 		</html>

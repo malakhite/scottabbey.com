@@ -1,11 +1,13 @@
 import Link from 'next/link';
 
-import styles from './nav.module.scss';
+import styles from './header.module.scss';
 
-export function Nav() {
+export function Header() {
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.name}>Scott Abbey</div>
+			<Link href="https://scottabbey.com" rel="me" className={styles.name}>
+				Scott Abbey
+			</Link>
 			<nav>
 				<ul className={styles.navList} role="list">
 					<li>

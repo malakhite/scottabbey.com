@@ -1,0 +1,18 @@
+.base {
+	position: sticky;
+	top: 0;
+}
+
+.entry {
+	display: inline-flex;
+	gap: var(--spacing-4);
+	align-items: center;
+	justify-content: start;
+	font-size: 0.875rem;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-2);
+}

@@ -1,3 +1,5 @@
+@use './breakpoints';
+
 .content {
 	max-width: 80ch;
 	margin: auto;
@@ -12,4 +14,16 @@
 	padding: var(--spacing-md);
 	background-color: var(--surface);
 	border-radius: var(--radius-md);
+}
+
+.two-column {
+	position: relative;
+	display: grid;
+	grid-template-columns: auto;
+	gap: var(--spacing-md);
+	width: 100%;
+
+	@include breakpoints.for-tablet-portrait-up {
+		grid-template-columns: 1fr 10rem;
+	}
 }
