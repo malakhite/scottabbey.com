@@ -12,8 +12,18 @@
 }
 
 .name {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: var(--spacing-2);
 	font-size: 1.5rem;
 	font-weight: 700;
+
+	& > svg {
+		color: inherit;
+		stroke: inherit;
+		fill: inherit;
+	}
 }
 
 .navList {
