@@ -1,4 +1,4 @@
-import { getFrontMatter, getPostPathParams } from '@/app/posts/utils';
+import { getFrontMatter, getPostPathParams } from '@/app/(frontend)/posts/utils';
 import { PAGE_SIZE } from '@/constants';
 import { PostList as PostListClient } from './post-list-client';
 

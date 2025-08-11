@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import styles from './post-list.module.scss';
 
-import type { Frontmatter, PostPathParams } from '@/app/posts/types';
+import type { Frontmatter, PostPathParams } from '@/types/posts';
 
 interface LineItemProps {
 	params: PostPathParams;

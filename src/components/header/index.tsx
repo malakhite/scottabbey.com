@@ -9,7 +9,7 @@ export function Header() {
 	return (
 		<div className={styles.wrapper}>
 			<Link href="https://scottabbey.com" rel="me" className={styles.name}>
-				<Logo height={logoSize} width={logoSize} /> Scott Abbey
+				<Logo height={logoSize} width={logoSize} /> <span>Scott Abbey</span>
 			</Link>
 			<nav>
 				<ul className={styles.navList} role="list">
@@ -21,6 +21,9 @@ export function Header() {
 					</li>
 					<li>
 						<Link href="/about">About</Link>
+					</li>
+					<li>
+						<Link href="/uses">Uses</Link>
 					</li>
 				</ul>
 			</nav>

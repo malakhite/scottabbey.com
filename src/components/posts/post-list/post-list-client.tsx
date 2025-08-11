@@ -8,7 +8,7 @@ import { LineItem } from './line-item';
 
 import styles from './post-list.module.scss';
 
-import type { Frontmatter, PostPathParams } from '@/app/posts/types';
+import type { Frontmatter, PostPathParams } from '@/types/posts';
 
 type Posts = Array<{
 	params: PostPathParams;

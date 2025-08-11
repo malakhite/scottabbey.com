@@ -24,6 +24,6 @@
 	width: 100%;
 
 	@include breakpoints.for-tablet-portrait-up {
-		grid-template-columns: 1fr 10rem;
+		grid-template-columns: 1fr 15rem;
 	}
 }

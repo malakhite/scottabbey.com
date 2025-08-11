@@ -1,4 +1,4 @@
-import { Meta } from '@/components/meta';
+import { HCard } from '@/components/h-card';
 import { PostList } from '@/components/posts/post-list';
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
 				<p>Welcome to my home on the internet.</p>
 				<PostList pages={1} className="card" />
 			</div>
-			<Meta className="card" />
+			<HCard className="card" />
 		</main>
 	);
 }

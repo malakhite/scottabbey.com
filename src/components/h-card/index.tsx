@@ -1,16 +1,26 @@
 import { cx } from 'class-variance-authority';
+import { Mailbox } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './meta.module.scss';
+import styles from './h-card.module.scss';
 
-import type { WithClassName } from '@/utils/types';
+import type { WithClassName } from '@/types/utility';
 
 interface MetaProps extends WithClassName {}
 
-export function Meta({ className }: MetaProps) {
+export function HCard({ className }: MetaProps) {
 	return (
-		<div className={cx(className)}>
+		<section className={cx('h-card', className)}>
+			<h3>About me</h3>
+			<ul className={cx(styles.list)} role="list">
+				<li className={cx(styles.entry)}>
+					<div className={cx(styles.icon)}>
+						<Mailbox size={16} />
+					</div>
+					<a href="mailto:scott@scottabbey.com">scott@scottabbey.com</a>
+				</li>
+			</ul>
 			<h3>Elsewhere</h3>
 			<ul className={cx(styles.list)} role="list">
 				<li className={styles.entry}>
@@ -38,6 +48,6 @@ export function Meta({ className }: MetaProps) {
 					</Link>
 				</li>
 			</ul>
-		</div>
+		</section>
 	);
 }

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import type { Frontmatter, PostImport, PostPathParams } from './types';
+import type { Frontmatter, PostImport, PostPathParams } from '../../../types/posts';
 
 export function getPostPathParams(): PostPathParams[] {
 	const postsDirectory = path.join(process.cwd(), 'src', 'content', 'posts');
