@@ -1,4 +1,4 @@
-import { getPostPathParams } from '@/app/posts/utils';
+import { getPostPathParams } from '@/app/(frontend)/posts/utils';
 
 import type { PostImport, PostPathParams } from '@/app/posts/types';
 
