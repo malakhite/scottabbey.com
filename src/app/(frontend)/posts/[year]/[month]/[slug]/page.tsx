@@ -1,6 +1,6 @@
 import { getPostPathParams } from '@/app/(frontend)/posts/utils';
 
-import type { PostImport, PostPathParams } from '@/app/posts/types';
+import type { PostImport, PostPathParams } from '@/types/posts';
 
 interface PageProps {
 	params: Promise<PostPathParams>;
